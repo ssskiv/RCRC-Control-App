@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">РУРУ</string>
+    <string name="err_when_connect">Не получилось подключиться к устройству</string>
+    <string name="exit">Выход</string>
+    <string name="flashlight">Фонарик</string>
+    <string name="connect">Подключиться</string>
+</resources>

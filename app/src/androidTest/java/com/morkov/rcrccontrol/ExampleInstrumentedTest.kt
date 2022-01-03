@@ -1,4 +1,4 @@
-package com.morkov.timetablesettings
+package com.morkov.rcrccontrol
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

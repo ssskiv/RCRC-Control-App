@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">app</string>
+    <string name="app_name">RCRC</string>
     <string name="sync_time">Sync time</string>
     <string name="connect">Connect</string>
     <string name="exit">Exit</string>

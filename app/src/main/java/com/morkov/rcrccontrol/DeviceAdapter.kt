@@ -1,4 +1,4 @@
-package com.morkov.timetablesettings
+package com.morkov.rcrccontrol
 
 import android.bluetooth.BluetoothDevice
 import android.view.LayoutInflater

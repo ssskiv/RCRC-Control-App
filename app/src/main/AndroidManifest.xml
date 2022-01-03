@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.morkov.timetablesettings">
+    package="com.morkov.rcrccontrol">
 
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TimetableSettings">
         <activity
-            android:name=".DeviceChooseActivity"
+            android:name="com.morkov.rcrccontrol.DeviceChooseActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.morkov.rcrccontrol.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

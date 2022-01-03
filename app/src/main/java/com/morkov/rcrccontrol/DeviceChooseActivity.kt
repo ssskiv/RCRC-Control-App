@@ -1,6 +1,5 @@
-package com.morkov.timetablesettings
+package com.morkov.rcrccontrol
 
-import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.content.Intent
