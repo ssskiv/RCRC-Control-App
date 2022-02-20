@@ -25,6 +25,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
     private lateinit var sl2: Slider
     private lateinit var sl3: Slider
     private lateinit var sl4: Slider
+    private lateinit var sl5: Slider
+    private lateinit var sl6: Slider
+    private lateinit var sl7: Slider
+    private lateinit var sl8: Slider
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,10 +37,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
         sl2 = findViewById(R.id.slider2)
         sl3 = findViewById(R.id.slider3)
         sl4 = findViewById(R.id.slider4)
+        sl5 = findViewById(R.id.slider5)
+        sl6 = findViewById(R.id.slider6)
+        sl7 = findViewById(R.id.slider7)
+        sl8 = findViewById(R.id.slider8)
         sl1.addOnChangeListener(this)
         sl2.addOnChangeListener(this)
         sl3.addOnChangeListener(this)
         sl4.addOnChangeListener(this)
+        sl5.addOnChangeListener(this)
+        sl6.addOnChangeListener(this)
+        sl7.addOnChangeListener(this)
+        sl8.addOnChangeListener(this)
 
         buttonFlash = findViewById(R.id.but_flash)
         buttonFlash.setOnClickListener(this)
@@ -186,6 +198,22 @@ private fun percentToString(percen:Float):String{
             }
             findViewById<Slider>(R.id.slider4) -> {
                 writeStringWithTag(percentToString(value), "4")
+
+            }
+            findViewById<Slider>(R.id.slider5) -> {
+                writeStringWithTag(percentToString(value), "5")
+
+            }
+            findViewById<Slider>(R.id.slider6) -> {
+                writeStringWithTag(percentToString(value), "6")
+
+            }
+            findViewById<Slider>(R.id.slider7) -> {
+                writeStringWithTag(percentToString(value), "7")
+
+            }
+            findViewById<Slider>(R.id.slider8) -> {
+                writeStringWithTag(percentToString(value), "8")
 
             }
         }
