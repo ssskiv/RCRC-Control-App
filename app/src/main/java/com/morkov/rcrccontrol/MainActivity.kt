@@ -1,5 +1,6 @@
 package com.morkov.rcrccontrol
 
+import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice
 import android.content.Intent
 import android.os.Bundle
@@ -29,6 +30,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
     private lateinit var sl6: Slider
     private lateinit var sl7: Slider
     private lateinit var sl8: Slider
+
+    private var lightstat: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -124,7 +127,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
     override fun onClick(v: View?) {
         if (v == findViewById(R.id.but_flash)) {
 
-            writeStringWithTag("f", "f")
+            writeStringWithTag("l", "l")
+            if (lightstat) {
+                lightstat = false
+                buttonFlash.setImageResource(R.drawable.ic_baseline_flashlight_off_24)
+            } else {
+                lightstat = true
+                buttonFlash.setImageResource(R.drawable.ic_baseline_flashlight_on_24)
+            }
         }
     }
 
@@ -146,21 +156,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
     private fun writeStringWithTag(text: String?, tag: String) {
         writeString("$tag $text")
     }
-private fun percentToString(percen:Float):String{
-    val percent = percen.toInt()
-    var tot: String = ""
-    if (percent >= 0) {
-        if (percent.absoluteValue < 100)
-            tot = " 0$percent"
-        if (percent.absoluteValue < 10)
-            tot = " 00$percent"
 
+    private fun percentToString(percen: Float): String {
+        val percent = percen.toInt()
+        var tot: String = ""
+        if (percent >= 0) {
+            if (percent.absoluteValue < 100)
+                tot = " 0$percent"
+            if (percent.absoluteValue < 10)
+                tot = " 00$percent"
+
+        }
+        if (percent >= 100) {
+            tot = " $percent"
+        }
+        return tot
     }
-    if (percent >= 100) {
-        tot=" $percent"
-    }
-    return tot
-}
+
     private fun coordToString(coord: Float): String {
         var coorInt = (coord * 100).toInt()
 
@@ -182,6 +194,7 @@ private fun percentToString(percen:Float):String{
         return tot
     }
 
+    @SuppressLint("RestrictedApi")
     override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
         when (slider) {
             findViewById<Slider>(R.id.slider1) -> {

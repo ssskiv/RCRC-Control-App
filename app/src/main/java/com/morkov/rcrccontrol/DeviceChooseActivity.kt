@@ -1,12 +1,16 @@
 package com.morkov.rcrccontrol
 
+import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
+import android.widget.CheckedTextView
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.io.IOException
@@ -14,6 +18,7 @@ import java.util.function.Consumer
 
 
 class DeviceChooseActivity : AppCompatActivity(), CellClickListener {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_device_choose)
@@ -27,6 +32,10 @@ class DeviceChooseActivity : AppCompatActivity(), CellClickListener {
         } catch (e: IOException) {
             Toast.makeText(this, "Enable bluetooth", Toast.LENGTH_LONG).show()
         }
+        // calling the action bar
+        val actionBar: ActionBar? = supportActionBar
+        // showing the back button in action bar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onCellClickListener(data: BluetoothDevice?) {
@@ -36,10 +45,15 @@ class DeviceChooseActivity : AppCompatActivity(), CellClickListener {
         finish()
     }
 
-    private class BluetoothController internal constructor() {
+
+
+    @SuppressLint("MissingPermission")
+    private class BluetoothController() {
         var message: String? = null
         var device: BluetoothDevice? = null
         private val bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
+
+        @SuppressLint("MissingPermission")
         var pairedDevices = bluetoothAdapter.bondedDevices
 
         init {
@@ -50,6 +64,16 @@ class DeviceChooseActivity : AppCompatActivity(), CellClickListener {
 
             })
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
 

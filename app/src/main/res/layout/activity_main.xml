@@ -30,10 +30,10 @@
                 <com.google.android.material.slider.Slider
                     android:id="@+id/slider1"
 
-                    android:layout_marginTop="30dp"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="30dp"
                     android:layout_marginBottom="20dp"
                     android:layout_weight="1"
                     android:stepSize="1"
@@ -44,10 +44,10 @@
                 <com.google.android.material.slider.Slider
                     android:id="@+id/slider2"
                     android:layout_width="wrap_content"
-                    android:layout_weight="1"
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="15dp"
                     android:layout_marginVertical="20dp"
+                    android:layout_weight="1"
                     android:stepSize="1"
                     android:value="90"
                     android:valueFrom="0"
@@ -141,7 +141,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:contentDescription="@string/flashlight"
-            android:src="@drawable/ic_baseline_flashlight_on_24" />
+            android:src="@drawable/ic_baseline_flashlight_off_24" />
+
 
     </LinearLayout>
 

@@ -5,4 +5,6 @@
     <string name="exit">Exit</string>
     <string name="err_when_connect">Error occurred when connecting to device</string>
     <string name="flashlight">flashlight</string>
+    <string name="con_stat">unconscious</string>
+    <string name="connect_automatically">Connect automatically</string>
 </resources>

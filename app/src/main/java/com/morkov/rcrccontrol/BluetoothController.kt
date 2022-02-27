@@ -1,6 +1,7 @@
 package com.morkov.rcrccontrol
 
 
+import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothSocket
 
@@ -9,6 +10,7 @@ import java.io.OutputStream
 import java.util.*
 
 
+@SuppressLint("MissingPermission")
 open class BluetoothController internal constructor(val device: BluetoothDevice) {
     var socket: BluetoothSocket? = null
     private val outStream: OutputStream
