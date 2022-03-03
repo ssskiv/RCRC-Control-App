@@ -7,4 +7,5 @@
     <string name="flashlight">flashlight</string>
     <string name="con_stat">unconscious</string>
     <string name="connect_automatically">Connect automatically</string>
+    <string name="all_to_0">All to 0</string>
 </resources>

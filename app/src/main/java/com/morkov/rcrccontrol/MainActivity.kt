@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -22,12 +23,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
     private var bluetoothController: BluetoothController? = null
 
     private lateinit var buttonFlash: ImageButton
+    private lateinit var buttonZero: Button
+    private lateinit var button360: Button
     private lateinit var sl1: Slider
     private lateinit var sl2: Slider
     private lateinit var sl3: Slider
     private lateinit var sl4: Slider
-    private lateinit var sl5: Slider
-    private lateinit var sl6: Slider
     private lateinit var sl7: Slider
     private lateinit var sl8: Slider
 
@@ -40,21 +41,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
         sl2 = findViewById(R.id.slider2)
         sl3 = findViewById(R.id.slider3)
         sl4 = findViewById(R.id.slider4)
-        sl5 = findViewById(R.id.slider5)
-        sl6 = findViewById(R.id.slider6)
         sl7 = findViewById(R.id.slider7)
         sl8 = findViewById(R.id.slider8)
         sl1.addOnChangeListener(this)
         sl2.addOnChangeListener(this)
         sl3.addOnChangeListener(this)
         sl4.addOnChangeListener(this)
-        sl5.addOnChangeListener(this)
-        sl6.addOnChangeListener(this)
         sl7.addOnChangeListener(this)
         sl8.addOnChangeListener(this)
 
         buttonFlash = findViewById(R.id.but_flash)
         buttonFlash.setOnClickListener(this)
+        buttonZero = findViewById(R.id.zero_button)
+        buttonZero.setOnClickListener(this)
+        button360 = findViewById(R.id.rev_button)
+        button360.setOnClickListener(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -125,15 +126,31 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
     }
 
     override fun onClick(v: View?) {
-        if (v == findViewById(R.id.but_flash)) {
-
-            writeStringWithTag("l", "l")
-            if (lightstat) {
-                lightstat = false
-                buttonFlash.setImageResource(R.drawable.ic_baseline_flashlight_off_24)
-            } else {
-                lightstat = true
-                buttonFlash.setImageResource(R.drawable.ic_baseline_flashlight_on_24)
+        when (v) {
+            findViewById<ImageButton>(R.id.but_flash) -> {
+                writeStringWithTag("l", "l")
+                if (lightstat) {
+                    lightstat = false
+                    buttonFlash.setImageResource(R.drawable.ic_baseline_flashlight_off_24)
+                } else {
+                    lightstat = true
+                    buttonFlash.setImageResource(R.drawable.ic_baseline_flashlight_on_24)
+                }
+            }
+            findViewById<Button>(R.id.zero_button)->{
+                Log.d("CONTROL","ZERO")
+                sl1.value= 90F
+                sl2.value= 90F
+                sl3.value= 90F
+                sl4.value= 90F
+                sl7.value= 90F
+                sl8.value= 90F
+            }findViewById<Button>(R.id.rev_button)->{
+                Log.d("CONTROL","ZERO_360")
+                sl1.value= 90F
+                sl4.value= 90F
+                sl7.value= 90F
+                sl8.value= 90F
             }
         }
     }
@@ -211,14 +228,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
             }
             findViewById<Slider>(R.id.slider4) -> {
                 writeStringWithTag(percentToString(value), "4")
-
-            }
-            findViewById<Slider>(R.id.slider5) -> {
-                writeStringWithTag(percentToString(value), "5")
-
-            }
-            findViewById<Slider>(R.id.slider6) -> {
-                writeStringWithTag(percentToString(value), "6")
 
             }
             findViewById<Slider>(R.id.slider7) -> {
