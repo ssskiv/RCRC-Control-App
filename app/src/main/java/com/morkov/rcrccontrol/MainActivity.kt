@@ -5,6 +5,7 @@ import android.bluetooth.BluetoothDevice
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -31,6 +32,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
     private lateinit var sl4: Slider
     private lateinit var sl7: Slider
     private lateinit var sl8: Slider
+    private lateinit var sl1plbut: ImageButton
+    private lateinit var sl2plbut: ImageButton
+    private lateinit var sl3plbut: ImageButton
+    private lateinit var sl4plbut: ImageButton
+    private lateinit var sl7plbut: ImageButton
+    private lateinit var sl8plbut: ImageButton
+    private lateinit var sl1minbut: ImageButton
+    private lateinit var sl2minbut: ImageButton
+    private lateinit var sl3minbut: ImageButton
+    private lateinit var sl4minbut: ImageButton
+    private lateinit var sl7minbut: ImageButton
+    private lateinit var sl8minbut: ImageButton
 
     private var lightstat: Boolean = false
 
@@ -56,6 +69,31 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
         buttonZero.setOnClickListener(this)
         button360 = findViewById(R.id.rev_button)
         button360.setOnClickListener(this)
+
+        sl1plbut = findViewById(R.id.slider1_button_plus)
+        sl2plbut = findViewById(R.id.slider2_button_plus)
+        sl3plbut = findViewById(R.id.slider3_button_plus)
+        sl4plbut = findViewById(R.id.slider4_button_plus)
+        sl7plbut = findViewById(R.id.slider7_button_plus)
+        sl8plbut = findViewById(R.id.slider8_button_plus)
+        sl1minbut = findViewById(R.id.slider1_button_minus)
+        sl2minbut = findViewById(R.id.slider2_button_minus)
+        sl3minbut = findViewById(R.id.slider3_button_minus)
+        sl4minbut = findViewById(R.id.slider4_button_minus)
+        sl7minbut = findViewById(R.id.slider7_button_minus)
+        sl8minbut = findViewById(R.id.slider8_button_minus)
+        sl1plbut.setOnClickListener(this)
+        sl2plbut.setOnClickListener(this)
+        sl3plbut.setOnClickListener(this)
+        sl4plbut.setOnClickListener(this)
+        sl7plbut.setOnClickListener(this)
+        sl8plbut.setOnClickListener(this)
+        sl1minbut.setOnClickListener(this)
+        sl2minbut.setOnClickListener(this)
+        sl3minbut.setOnClickListener(this)
+        sl4minbut.setOnClickListener(this)
+        sl7minbut.setOnClickListener(this)
+        sl8minbut.setOnClickListener(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -137,20 +175,69 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
                     buttonFlash.setImageResource(R.drawable.ic_baseline_flashlight_on_24)
                 }
             }
-            findViewById<Button>(R.id.zero_button)->{
-                Log.d("CONTROL","ZERO")
-                sl1.value= 85F
-                sl2.value= 90F
-                sl3.value= 90F
-                sl4.value= 80F
-                sl7.value= 85F
-                sl8.value= 85F
-            }findViewById<Button>(R.id.rev_button)->{
-                Log.d("CONTROL","ZERO_360")
-                sl1.value= 85F
-                sl4.value= 80F
-                sl7.value= 85F
-                sl8.value= 85F
+            findViewById<Button>(R.id.zero_button) -> {
+                Log.d("CONTROL", "ZERO")
+                sl1.value = 85F
+                sl2.value = 90F
+                sl3.value = 90F
+                sl4.value = 80F
+                sl7.value = 85F
+                sl8.value = 85F
+            }
+            findViewById<Button>(R.id.rev_button) -> {
+                Log.d("CONTROL", "ZERO_360")
+                sl1.value = 85F
+                sl4.value = 80F
+                sl7.value = 85F
+                sl8.value = 85F
+            }
+            findViewById<ImageButton>(R.id.slider1_button_plus) -> {
+                if (sl1.value + sl1.stepSize <= sl1.valueTo)
+                    sl1.value += sl1.stepSize
+            }
+            findViewById<ImageButton>(R.id.slider2_button_plus) -> {
+                if (sl2.value + sl2.stepSize <= sl2.valueTo)
+                    sl2.value += sl2.stepSize
+            }
+            findViewById<ImageButton>(R.id.slider3_button_plus) -> {
+                if (sl3.value + sl3.stepSize <= sl3.valueTo)
+                    sl3.value += sl3.stepSize
+            }
+            findViewById<ImageButton>(R.id.slider4_button_plus) -> {
+                if (sl4.value + sl4.stepSize <= sl4.valueTo)
+                    sl4.value += sl4.stepSize
+            }
+            findViewById<ImageButton>(R.id.slider7_button_plus) -> {
+                if (sl7.value + sl7.stepSize <= sl7.valueTo)
+                    sl7.value += sl7.stepSize
+            }
+            findViewById<ImageButton>(R.id.slider8_button_plus) -> {
+                if (sl8.value + sl8.stepSize <= sl8.valueTo)
+                    sl8.value += sl8.stepSize
+            }
+            findViewById<ImageButton>(R.id.slider1_button_minus) -> {
+                if (sl8.value - sl8.stepSize >= sl8.valueFrom)
+                    sl1.value -= sl1.stepSize
+            }
+            findViewById<ImageButton>(R.id.slider2_button_minus) -> {
+                if (sl2.value - sl2.stepSize >= sl2.valueFrom)
+                    sl2.value -= sl2.stepSize
+            }
+            findViewById<ImageButton>(R.id.slider3_button_minus) -> {
+                if (sl3.value - sl3.stepSize >= sl3.valueFrom)
+                    sl3.value -= sl3.stepSize
+            }
+            findViewById<ImageButton>(R.id.slider4_button_minus) -> {
+                if (sl4.value - sl4.stepSize >= sl4.valueFrom)
+                    sl4.value -= sl4.stepSize
+            }
+            findViewById<ImageButton>(R.id.slider7_button_minus) -> {
+                if (sl7.value - sl7.stepSize >= sl7.valueFrom)
+                    sl7.value -= sl7.stepSize
+            }
+            findViewById<ImageButton>(R.id.slider8_button_minus) -> {
+                if (sl8.value - sl8.stepSize >= sl8.valueFrom)
+                    sl8.value -= sl8.stepSize
             }
         }
     }
@@ -240,6 +327,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
             }
         }
     }
-
 
 }

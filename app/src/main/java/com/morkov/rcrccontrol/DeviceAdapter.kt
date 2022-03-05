@@ -1,5 +1,6 @@
 package com.morkov.rcrccontrol
 
+import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ class DeviceAdapter(var devices: Set<BluetoothDevice>, cellClickListener: CellCl
         return DeviceHolder(view)
     }
 
+    @SuppressLint("MissingPermission")
     override fun onBindViewHolder(
         holder: DeviceHolder,
         position: Int
