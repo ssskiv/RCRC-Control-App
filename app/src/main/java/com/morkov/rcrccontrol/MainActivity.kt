@@ -139,18 +139,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
             }
             findViewById<Button>(R.id.zero_button)->{
                 Log.d("CONTROL","ZERO")
-                sl1.value= 90F
+                sl1.value= 85F
                 sl2.value= 90F
                 sl3.value= 90F
-                sl4.value= 90F
-                sl7.value= 90F
-                sl8.value= 90F
+                sl4.value= 80F
+                sl7.value= 85F
+                sl8.value= 85F
             }findViewById<Button>(R.id.rev_button)->{
                 Log.d("CONTROL","ZERO_360")
-                sl1.value= 90F
-                sl4.value= 90F
-                sl7.value= 90F
-                sl8.value= 90F
+                sl1.value= 85F
+                sl4.value= 80F
+                sl7.value= 85F
+                sl8.value= 85F
             }
         }
     }
