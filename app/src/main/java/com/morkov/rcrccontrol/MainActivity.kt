@@ -255,7 +255,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
     }
 
     override fun onPadMoved(xPercent: Float, yPercent: Float, id: Int) {
-        var xText = coordToString(xPercent)
+        val xText = coordToString(xPercent)
 
         val yText = coordToString(yPercent)
 

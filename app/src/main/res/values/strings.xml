@@ -14,4 +14,6 @@
     <string name="title_activity_landscape_main">LandscapeMainActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="hand_top_control_pad_controls_hand">Hand. Top control pad controls hand</string>
+    <string name="camera_bottom_control_pad_controls_camera">Camera.Bottom control pad controls camera</string>
 </resources>

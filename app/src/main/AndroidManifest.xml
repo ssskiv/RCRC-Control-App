@@ -16,11 +16,9 @@
         android:theme="@style/Theme.TimetableSettings">
         <activity
             android:name=".LandscapeMainActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:screenOrientation="sensorLandscape"
-            android:label="@string/title_activity_landscape_main"
-            android:theme="@style/Theme.TimetableSettings.Fullscreen" />
+            android:label="@string/title_activity_landscape_main" />
         <activity
             android:name=".ChooseActivity"
             android:exported="true">
