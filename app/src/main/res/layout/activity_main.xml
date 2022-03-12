@@ -247,7 +247,7 @@
                     android:id="@+id/rev_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="360 to 0" />
+                    android:text="@string/_360_to_0" />
             </LinearLayout>
         </LinearLayout>
 

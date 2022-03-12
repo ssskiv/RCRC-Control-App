@@ -1,3 +1,5 @@
+@file:Suppress("SelfAssignment", "HasPlatformType", "HasPlatformType")
+
 package com.morkov.rcrccontrol
 
 import android.annotation.SuppressLint
@@ -8,9 +10,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DeviceAdapter(var devices: Set<BluetoothDevice>, cellClickListener: CellClickListener) :
+class DeviceAdapter(private var devices: Set<BluetoothDevice>, cellClickListener: CellClickListener) :
     RecyclerView.Adapter<DeviceAdapter.DeviceHolder>() {
-    var cellClickListener: CellClickListener
+    private var cellClickListener: CellClickListener
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -25,9 +27,9 @@ class DeviceAdapter(var devices: Set<BluetoothDevice>, cellClickListener: CellCl
         position: Int
     ) {
         val device = devices.toTypedArray()[position]
-        holder.name.setText(device.name)
-        holder.addr.setText(device.address)
-        holder.itemView.setOnClickListener(View.OnClickListener {
+        holder.name.text = device.name
+        holder.addr.text = device.address
+        holder.itemView.setOnClickListener({
             cellClickListener.onCellClickListener(
                 device
             )

@@ -1,21 +1,21 @@
 package com.morkov.rcrccontrol
 
-import androidx.appcompat.app.AppCompatActivity
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.os.PersistableBundle
 import android.util.Log
-import android.view.*
-import android.widget.*
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.ImageButton
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.google.android.material.slider.Slider
-import com.morkov.rcrccontrol.databinding.ActivityLandscapeMainBinding
 import java.io.IOException
 import kotlin.math.absoluteValue
 import kotlin.system.exitProcess
@@ -28,8 +28,6 @@ class LandscapeMainActivity : AppCompatActivity(), View.OnClickListener,
     private lateinit var buttonFlash: ImageButton
     private lateinit var sl2: Slider
     private lateinit var sl3: Slider
-    private lateinit var tvSl2: TextView
-    private lateinit var tvSl3: TextView
     private lateinit var cpv: ControlPadView
     private lateinit var cpv2: ControlPadView
     private lateinit var cpv3: ControlPadView

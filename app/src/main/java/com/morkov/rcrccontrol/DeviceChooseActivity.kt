@@ -7,7 +7,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.widget.CheckedTextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
@@ -48,7 +47,7 @@ class DeviceChooseActivity : AppCompatActivity(), CellClickListener {
 
 
     @SuppressLint("MissingPermission")
-    private class BluetoothController() {
+    private class BluetoothController {
         var message: String? = null
         var device: BluetoothDevice? = null
         private val bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()

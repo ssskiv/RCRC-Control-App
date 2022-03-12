@@ -1,19 +1,15 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">RCRC</string>
-    <string name="sync_time">Sync time</string>
     <string name="connect">Connect</string>
     <string name="exit">Exit</string>
     <string name="err_when_connect">Error occurred when connecting to device</string>
     <string name="flashlight">flashlight</string>
-    <string name="con_stat">unconscious</string>
-    <string name="connect_automatically">Connect automatically</string>
-    <string name="all_to_0">All to 0</string>
-    <string name="choose_orientation">Choose orientation:</string>
-    <string name="portrait">Portrait</string>
-    <string name="landscape">Landscape</string>
-    <string name="title_activity_landscape_main">LandscapeMainActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="hand_top_control_pad_controls_hand">Hand. Top control pad controls hand</string>
-    <string name="camera_bottom_control_pad_controls_camera">Camera.Bottom control pad controls camera</string>
+    <string name="all_to_0" tools:ignore="MissingTranslation">All to 0</string>
+    <string name="choose_orientation" tools:ignore="MissingTranslation">Choose orientation:</string>
+    <string name="portrait" tools:ignore="MissingTranslation">Portrait</string>
+    <string name="landscape" tools:ignore="MissingTranslation">Landscape</string>
+    <string name="title_activity_landscape_main" tools:ignore="MissingTranslation">LandscapeMainActivity</string>
+    <string name="hand_top_control_pad_controls_hand" tools:ignore="MissingTranslation">Hand. Top control pad controls hand</string>
+    <string name="camera_bottom_control_pad_controls_camera" tools:ignore="MissingTranslation">Camera.Bottom control pad controls camera</string>
+    <string name="_360_to_0">360 to 0</string>
 </resources>

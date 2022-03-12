@@ -286,7 +286,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BluetoothControl
     }
 
     private fun coordToString(coord: Float): String {
-        var coorInt = (coord * 100).toInt()
+        val coorInt = (coord * 100).toInt()
 
         var tot: String = ""
         if (coorInt >= 0) {

@@ -11,8 +11,8 @@ import java.util.*
 
 
 @SuppressLint("MissingPermission")
-open class BluetoothController internal constructor(val device: BluetoothDevice) {
-    var socket: BluetoothSocket? = null
+open class BluetoothController internal constructor(device: BluetoothDevice) {
+    private var socket: BluetoothSocket? = null
     private val outStream: OutputStream
 
     @Throws(IOException::class)

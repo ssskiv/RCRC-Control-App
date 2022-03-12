@@ -5,4 +5,12 @@
     <string name="exit">Выход</string>
     <string name="flashlight">Фонарик</string>
     <string name="connect">Подключиться</string>
+    <string name="all_to_0">Все в 0</string>
+    <string name="choose_orientation">Выберите ориентацию:</string>
+    <string name="portrait">Портретная</string>
+    <string name="landscape">Ландшафтная</string>
+    <string name="title_activity_landscape_main">Ландшафт</string>
+    <string name="hand_top_control_pad_controls_hand">Рука. Верхний джойстик контролирует руку</string>
+    <string name="camera_bottom_control_pad_controls_camera">Камера . Нижний джойстик контролирует камерк</string>
+    <string name="_360_to_0">360 в 0</string>
 </resources>
