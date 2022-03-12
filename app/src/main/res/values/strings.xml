@@ -8,4 +8,10 @@
     <string name="con_stat">unconscious</string>
     <string name="connect_automatically">Connect automatically</string>
     <string name="all_to_0">All to 0</string>
+    <string name="choose_orientation">Choose orientation:</string>
+    <string name="portrait">Portrait</string>
+    <string name="landscape">Landscape</string>
+    <string name="title_activity_landscape_main">LandscapeMainActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

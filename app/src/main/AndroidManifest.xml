@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.morkov.rcrccontrol">
 
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
@@ -14,10 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TimetableSettings">
         <activity
-            android:name="com.morkov.rcrccontrol.DeviceChooseActivity"
-            android:exported="true" />
+            android:name=".LandscapeMainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:screenOrientation="sensorLandscape"
+            android:label="@string/title_activity_landscape_main"
+            android:theme="@style/Theme.TimetableSettings.Fullscreen" />
         <activity
-            android:name="com.morkov.rcrccontrol.MainActivity"
+            android:name=".ChooseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +30,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DeviceChooseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>
